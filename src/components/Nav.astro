@@ -1,0 +1,102 @@
+---
+const links = [
+  { href: "/", name: "", icon: "/images/icons/home_aboutus.svg" },
+  { href: "/Solutions_Services", name: "", icon: "/images/icons/solutions_services.svg" },
+  { href: "/OpenSource_Articles", name: "", icon: "/images/icons/opensource_articles.svg" },
+  { href: "/Contact_Social", name: "", icon: "/images/icons/contacts_social.svg" },
+];
+
+const currentPage = Astro.url.pathname;
+---
+
+<nav>
+  <ul class="nav-list">
+    {links.map(({ href, name, icon }) => {
+      const isActive = currentPage === href;
+      return (
+        <li>
+          <a
+            href={href}
+            class={`nav-link ${isActive ? "active" : ""}`}
+          >
+            <img src={icon} alt={name} class="nav-icon" />
+            <span>{name}</span>
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>
+
+<style>
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s, border-bottom 0.3s;
+  }
+
+  .nav-link.active {
+    color: #e9a506;
+    border-bottom: 2px solid #ff7200;
+  }
+
+  .nav-link:hover {
+    color: #e9a506;
+  }
+
+  .nav-icon {
+    width: 90px;
+    height: 40px;
+    margin-right: 4px;
+    
+  }
+  @media (max-width: 768px) {
+ 
+  
+  
+  .nav-icon {
+    width: 60px;           /* Keep size consistent */
+    height: 5;          /* Prevent squishing */
+    margin: 0px;      /* Remove right margin for smaller screens */
+    flex-shrink: 0;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .nav-list {
+    display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;   /* allow horizontal scroll if needed */
+  gap: 6px;           /* small spacing */
+  padding: 0 8px;
+  align-items: center;
+  justify-content: center;
+    
+  }
+
+  .nav-link {
+    display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  }
+
+  nav {
+    padding: 0 0px;        /* Slight padding around the whole nav */
+  }
+}
+</style>

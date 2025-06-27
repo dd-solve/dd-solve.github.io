@@ -1,0 +1,46 @@
+---
+//import Nav from "./components/Nav";
+import Nav from "../components/Nav.astro";
+import Carousel from '../components/Carousel.astro';
+import { marked } from 'marked';
+import MainLayout from "../layouts/Layout.astro";  // Import the layout
+import { getTextContent } from "../utils/loadText.ts";
+import { getMDContent } from "../utils/loadText.ts";
+
+const OpenSourceContent = await getMDContent("OpenSource.md", "OpenSource_Articles");
+const OpenSource_html = marked(OpenSourceContent);
+
+const ArticlesContent = await getMDContent("Articles.md", "OpenSource_Articles");
+const Articles_html = marked(ArticlesContent);
+
+
+const opensourcePath = [
+  "/images/OpenSource_Articles/KM_orange.png",
+  "/images/OpenSource_Articles/KM_black.png"
+  ]; // Image for this page
+---
+<MainLayout>
+    <body>
+        <!-- First row: Solutions -->
+  <div class="row">
+    <div class="rounded-box service-box">
+      <h1>Open Source</h1>
+     <div set:html={OpenSource_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={opensourcePath} id="carousel-OpenSource" />
+  </div>
+ <div class="row">
+    <div class="rounded-box service-box">
+        <h1>Articles</h1>
+           <div set:html={Articles_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={[opensourcePath]} id="carousel-Articles" />
+ </div>
+        </body>
+</MainLayout>
+
+<style>
+  .service-box {
+    width: 700px;
+  }
+</style>

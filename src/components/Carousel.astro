@@ -1,0 +1,79 @@
+---
+// Carousel.astro
+const { images = [], id } = Astro.props;
+---
+<style>
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: : 100%;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    object-fit: cover; /* You can also try 'cover' for a different look */
+  }
+
+
+ 
+</style>
+
+<div class="carousel-container" id={id} data-images={JSON.stringify(images)}>
+  <div class="carousel-slide">
+    {images.map((img:string, i: number) => (
+      <img src={img} alt={`Slide ${i + 1}`} loading="lazy" />
+    ))}
+  </div>
+  <div class="carousel-buttons">
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+  </div>
+</div>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+
+    carousels.forEach(container => {
+      const images = JSON.parse(container.getAttribute('data-images') || '[]');
+      const slideContainer = container.querySelector('.carousel-slide');
+      const prevBtn = container.querySelector('.prev');
+      const nextBtn = container.querySelector('.next');
+      let currentIndex = 0;
+
+      slideContainer.style.length = `${images.length * 30}%`;
+      slideContainer.style.width = `${images.width * 30}%`;
+
+      function updateSlide() {
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      prevBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlide();
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide();
+      });
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide();
+      }, 3000);
+    });
+  });
+</script>

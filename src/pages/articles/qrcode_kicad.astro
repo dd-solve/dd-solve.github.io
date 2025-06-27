@@ -1,0 +1,35 @@
+---
+import { marked } from 'marked';
+import MainLayout from '../../layouts/Layout.astro';
+import { getTextContent, getMDContent } from '../../utils/loadText.ts';
+
+const content = await getMDContent("qrcode_kicad.md", "OpenSource_Articles");
+const content_html = marked(content);
+---
+
+<MainLayout>
+<div class="row">
+  <div class="rounded-box service-box" style="
+         max-width: 1000px; 
+         margin: 0px auto; 
+         padding: 10px; 
+         border-radius: 10px; 
+         display: flex; 
+         flex-direction: column; 
+         align-items: center; 
+         text-align: center;">
+    <h1 style="margin-bottom: 0px;">QR Code in KiCad</h1>
+    <img 
+      src="/images/OpenSource_Articles/qrcode_kicad/qrcode_footprint_ico.PNG" 
+      alt="Parameterized Text in KiCad" 
+      style="width: 20%; height: auto; border-radius: 10px;">
+  </div>
+</div>
+
+  <div class="row">
+    <div class="rounded-box service-box"  style="max-width: 1000px; margin: auto;">
+      
+      <div set:html={content_html} class="markdown-content"></div>
+</div>
+  </div>
+

@@ -1,0 +1,135 @@
+---
+import Carousel from '../components/Carousel.astro';
+import Nav from "../components/Nav.astro";
+import { marked } from 'marked';
+
+const rawMd = await getTextContent('overview.md', 'solutions');
+const html = marked(rawMd);
+
+import MainLayout from "../layouts/Layout.astro";  // Import the layout
+import { getTextContent, getMDContent } from "../utils/loadText.ts";
+const IntroContent = await getTextContent("intro.txt", "Solutions_Services")
+
+const SolutionsContent = await getMDContent("Solutions.md", "Solutions_Services");
+const Sol_html = marked(SolutionsContent);
+
+const ServicesContent = await getMDContent("Services.md", "Solutions_Services");
+const Ser_html = marked(ServicesContent);
+
+const ElectronicEngineeringContent = await getMDContent("ElectronicEng.md", "Solutions_Services");
+const EE_html = marked(ElectronicEngineeringContent);
+
+const MechanicalEngineeringContent = await getMDContent("MechanicalEng.md", "Solutions_Services");
+const ME_html = marked(MechanicalEngineeringContent);
+
+const ModulesPackagingContent = await getMDContent("ModulesPackaging.md", "Solutions_Services");
+const Module_html = marked(ModulesPackagingContent);
+
+const SoftwareFirmwareContent = await getMDContent("SoftwareFirmware.md", "Solutions_Services");
+const Soft_html = marked(SoftwareFirmwareContent);
+
+const ConsultingContent = await getMDContent("GeneralConsulting_TechnicalSupport.md", "Solutions_Services");
+const Consulting_html = marked(ConsultingContent);
+
+const imagePath = "/images/projects.png"; // Image for this page
+const ee_imagePaths = [
+  '/images/Electronic_Engineering/Electronics_1.png',
+  '/images/Electronic_Engineering/Electronics_2.png',
+  '/images/Electronic_Engineering/Electronics_3.png',
+  '/images/Electronic_Engineering/Electronics_4.png',
+  '/images/Electronic_Engineering/Electronics_5.png'
+];
+const me_imagePaths = [
+  '/images/Mechanical_Engineering/Mechanics_1.png',
+  '/images/Mechanical_Engineering/Mechanics_2.png',
+  '/images/Mechanical_Engineering/Mechanics_3.png',
+  '/images/Mechanical_Engineering/Mechanics_4.png',
+  '/images/Mechanical_Engineering/Mechanics_5.gif'
+];
+const software_imagePaths = [
+  '/images/Software_Firmware/Software_1.png',
+  '/images/Software_Firmware/Software_2.png'
+];
+const serv_imagePaths = [
+  '/images/projects.png',
+];
+
+---
+<MainLayout>
+     <!-- First row: Solutions -->
+  <div class="row">
+    <div class="rounded-box">
+      <h1>Solutions</h1>
+      <div set:html={Sol_html} class="markdown-content"></div>
+    </div>
+   <Carousel images={serv_imagePaths} id="carousel-solutions"/>
+  </div>
+
+  <!-- Second row: Services -->
+  <div class="row">
+    <div class="rounded-box">
+      <h1>Services</h1>
+      <div set:html={Ser_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={serv_imagePaths} id="carousel-serv"/>
+  </div>
+</body>
+</div>
+
+<!-- row: Electronic Engineering -->
+  <div class="row">
+    <div class="rounded-box">
+      <h1>Electronic Engineering</h1>
+      <div set:html={EE_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={ee_imagePaths} id="carousel-electronic"/>
+  </div>
+</body>
+</div>
+<!-- row: Mechanical Engineering -->
+  <div class="row">
+    <div class="rounded-box">
+      <h1>Mechanical Engineering</h1>
+      <div set:html={ME_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={me_imagePaths} id="carousel-mechanical"/>
+  </div>
+</body>
+</div>
+<!-- row: Modules Packaging -->
+  <div class="row">
+    <div class="rounded-box">
+      <h1>Modules Packaging</h1>
+      <div set:html={Module_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={serv_imagePaths} id="carousel-module"/>
+  </div>
+</body>
+</div>
+<!-- row: Software & Firmware -->
+  <div class="row">
+    <div class="rounded-box">
+      <h1>Software Firmware</h1>
+      <div set:html={Soft_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={software_imagePaths} id="carousel-software"/>
+  </div>
+</body>
+</div>
+<!-- row: Software & Firmware -->
+  <div class="row">
+    <div class="rounded-box">
+      <h1>General Consulting & Technical Support</h1>
+      <div set:html={Module_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={serv_imagePaths} id="carousel-general"/>
+  </div>
+</body>
+</div>
+
+</MainLayout>
+<style>
+  .service-box {
+    width: 700px;
+  }
+</style>

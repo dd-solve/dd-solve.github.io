@@ -1,0 +1,45 @@
+---
+import Nav from "../components/Nav.astro";
+import Carousel from '../components/Carousel.astro';
+//import Nav from "./components/Nav";
+import MainLayout from "../layouts/Layout.astro"
+import { getMDContent } from "../utils/loadText.ts";
+import { marked } from "marked";
+const headline = await getMDContent("headline.md", "home");
+const head_html = marked(headline); // Convert Markdown to HTML
+
+const intro = await getMDContent("intro.md", "home");
+const intro_html = marked(intro); // Convert Markdown to HTML
+
+const cta = await getMDContent("cta.md", "home");
+const cta_html = marked(cta); // Convert Markdown to HTML
+
+const imagePath = ["/images/home_about/home_placeholder.png"]; // Image for this page
+
+const AboutContent = await getMDContent("AboutUs.md", "home"); // Load text content from Contact.txt
+const About_html = marked(AboutContent); // Convert Markdown to HTML
+
+const about_imagePath = ["/images/home_about/about_placeholder.png"]; // Image for this page
+---
+
+
+<MainLayout>
+    
+    <body>
+        <div class="row">
+            <div class="rounded-box service-box">
+                <h1>{headline}</h1> <!-- Displays text from headline.txt -->
+                <div set:html={intro_html} class="markdown-content"></div>
+            </div>
+            <Carousel images={[imagePath]} id="carousel-home" />
+        </div>
+        <div class="row">
+            <div class="rounded-box service-box">
+                <h1>About D+D</h1>
+                <div set:html={About_html} class="markdown-content"></div>
+            </div>
+         <Carousel images={[about_imagePath]} id="carousel-home" />
+        </div>
+    </body>
+</MainLayout>
+

@@ -1,0 +1,25 @@
+---
+//import Nav from "./components/Nav";
+import Carousel from '../components/Carousel.astro';
+import Nav from "../components/Nav.astro";
+import MainLayout from "../layouts/Layout.astro";  // Import the layout
+import { getMDContent } from "../utils/loadText.ts";
+import { marked } from 'marked';
+const ContactContent = await getMDContent("Contact.md", "Contact_Social"); // Load text content from Contact.txt
+const Content_html = marked(ContactContent); // Convert Markdown to HTML
+
+const contact_imagePath = "/images/Contacts/social_icons.png"; // Image for this page
+---
+
+<MainLayout>
+    <body>
+         
+        <div class="row">
+            <div class="rounded-box service-box">
+
+                <div set:html={Content_html} class="markdown-content"></div>
+            </div>
+         <Carousel images={[contact_imagePath]} id="carousel-contacts" />
+        </div>
+    </body>
+</MainLayout>

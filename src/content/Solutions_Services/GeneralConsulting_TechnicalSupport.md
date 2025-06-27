@@ -1,0 +1,2 @@
+### Feasibility studies, Concept development, Rapid Prototyping, Project management, DFMEA-PFMEA, DFM (Injection molding, die casting), 
+### Modules assembly DFM with High Level Process flow, Intellectual Property supporting activities (e.g. FTO analysis, drawings and patent draft preparation).
