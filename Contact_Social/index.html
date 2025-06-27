@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"><link rel="icon" href="/favicon.svg" type="image/x-icon"><title> | Solve Labs</title><style>.carousel-container[data-astro-cid-wfe7xcno]{position:relative;width:100%;max-width:600px;overflow:hidden;border-radius:12px;box-shadow:0 0 10px #0000001a}.carousel-slide[data-astro-cid-wfe7xcno]{display:flex;transition:transform .5s ease-in-out;height:: 100%}.carousel-slide[data-astro-cid-wfe7xcno] img[data-astro-cid-wfe7xcno]{width:100%;height:100%;flex:0 0 100%;object-fit:cover}
+</style>
+<link rel="stylesheet" href="/dd-solve.github.io/_astro/Contact_Social.CBM0VnSF.css"></head> <body class="bg-gray-100 flex flex-col min-h-screen"> <!-- Header Section --> <header class="bg-blue-600 text-white p-6 shadow-lg fixed top-0 left-0 w-full z-50"> <div class="max-w-7xl mx-auto flex justify-between items-center"> <!-- Logo --> <a href="" class="flex items-center gap-2"> <img src="/DD_Logo.svg" alt="Logo" class="w-10 h-10 md:w-12 md:h-12"> <h5 class="text-1xl font-bold leading-[1.1] mt-2 md:mt-0 md:leading-tight ">Solve Labs</h5> </a> <!-- Navigation --> <nav data-astro-cid-dmqpwcec> <ul class="nav-list" data-astro-cid-dmqpwcec> <li data-astro-cid-dmqpwcec> <a href="/" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/home_aboutus.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/Solutions_Services" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/solutions_services.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/OpenSource_Articles" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/opensource_articles.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/Contact_Social" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/contacts_social.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li> </ul> </nav>  <!-- ✅ Include the Nav component here --> </div> </header> <!-- Main Content --> <main class="flex-grow pt-20 px-10 sm:pt-32">  <div class="row"> <div class="rounded-box service-box"> <div class="markdown-content"><h1><strong>D+D Solve Labs</strong></h1>
+<h3>Email: <strong><a href="mailto:info@dd-solve.com">info@dd-solve.com</a></strong></h3>
+<h3>Phone: <strong>+41 44 123</strong> </br></br></h3>
+<h4><strong>Obere Schöntalstrasse 46</strong></h4>
+<h4><strong>8406 Winterthur</strong></h4>
+<h4><strong>Switzerland</strong> </br></br></h4>
+<h3><strong>Social Media</strong>:</h3>
+<p><a href="linkedin.com/dd-solve">LinkedIn</a></br>
+<a href="@dd-solve.company">X</a></br>
+<a href="https://github.com/dd-solve">GitHub</a></br></p>
+</div> </div> <div class="carousel-container" id="carousel-contacts" data-images="[&#34;/images/Contacts/social_icons.png&#34;]" data-astro-cid-wfe7xcno> <div class="carousel-slide" data-astro-cid-wfe7xcno> <img src="/images/Contacts/social_icons.png" alt="Slide 1" loading="lazy" data-astro-cid-wfe7xcno> </div> <div class="carousel-buttons" data-astro-cid-wfe7xcno> <button class="prev" data-astro-cid-wfe7xcno>‹</button> <button class="next" data-astro-cid-wfe7xcno>›</button> </div> </div> <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+
+    carousels.forEach(container => {
+      const images = JSON.parse(container.getAttribute('data-images') || '[]');
+      const slideContainer = container.querySelector('.carousel-slide');
+      const prevBtn = container.querySelector('.prev');
+      const nextBtn = container.querySelector('.next');
+      let currentIndex = 0;
+
+      slideContainer.style.length = `${images.length * 30}%`;
+      slideContainer.style.width = `${images.width * 30}%`;
+
+      function updateSlide() {
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      prevBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlide();
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide();
+      });
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide();
+      }, 3000);
+    });
+  });
+</script> </div>  <!-- ✅ This is where page content will go --> </main> <!-- Footer Section --> <footer class="text-white p-6 mt-10" style="background-color: var(--band-color);"> <div class="max-w-7xl mx-auto flex justify-center gap-10 items-center"> <a href="//www.x.com" target="_blank" rel="noopener"> <img src="/images/icons/x.svg" alt="Twitter" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://linkedin.com" target="_blank" rel="noopener"> <img src="/images/icons/linkedin.svg" alt="LinkedIn" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://instagram.com" target="_blank" rel="noopener"> <img src="/images/icons/instagram.svg" alt="Instagram" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://github.com/" target="_blank" rel="noopener"> <img src="/images/icons/github.svg" alt="Github" class="w-8 h-8 hover:opacity-80"> </a> </div> </footer> </body></html>

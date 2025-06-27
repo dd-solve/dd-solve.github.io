@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"><link rel="icon" href="/favicon.svg" type="image/x-icon"><title> | Solve Labs</title><link rel="stylesheet" href="/dd-solve.github.io/_astro/Contact_Social.CBM0VnSF.css"></head> <body class="bg-gray-100 flex flex-col min-h-screen"> <!-- Header Section --> <header class="bg-blue-600 text-white p-6 shadow-lg fixed top-0 left-0 w-full z-50"> <div class="max-w-7xl mx-auto flex justify-between items-center"> <!-- Logo --> <a href="" class="flex items-center gap-2"> <img src="/DD_Logo.svg" alt="Logo" class="w-10 h-10 md:w-12 md:h-12"> <h5 class="text-1xl font-bold leading-[1.1] mt-2 md:mt-0 md:leading-tight ">Solve Labs</h5> </a> <!-- Navigation --> <nav data-astro-cid-dmqpwcec> <ul class="nav-list" data-astro-cid-dmqpwcec> <li data-astro-cid-dmqpwcec> <a href="/" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/home_aboutus.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/Solutions_Services" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/solutions_services.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/OpenSource_Articles" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/opensource_articles.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/Contact_Social" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/contacts_social.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li> </ul> </nav>  <!-- ✅ Include the Nav component here --> </div> </header> <!-- Main Content --> <main class="flex-grow pt-20 px-10 sm:pt-32">  <div class="row"> <div class="rounded-box service-box" style="
+         max-width: 1000px; 
+         margin: 0px auto; 
+         padding: 10px; 
+         border-radius: 10px; 
+         display: flex; 
+         flex-direction: column; 
+         align-items: center; 
+         text-align: center;"> <h1 style="margin-bottom: 0px;">QR Code in KiCad</h1> <img src="/images/OpenSource_Articles/qrcode_kicad/qrcode_footprint_ico.PNG" alt="Parameterized Text in KiCad" style="width: 20%; height: auto; border-radius: 10px;"> </div> </div> <div class="row"> <div class="rounded-box service-box" style="max-width: 1000px; margin: auto;"> <div class="markdown-content"><p>QR codes offer a simple and compact way to encode information directly onto a printed circuit board (PCB). They can store data such as configuration details, version numbers, or links to specific documentation. </br> 
+As projects grow more complex and documentation becomes harder to manage, embedding a QR code on the board can provide a reliable reference point—ensuring users always have access to accurate and relevant information.</br></p>
+<p><strong>Solution</strong>: Use the silkscreen layer with a QRcode. Link it to a non-electrical symbol. This way, your QR code becomes part of the board as component. </br></p>
+<p><strong>What You&#39;ll Learn</strong>:
+In this tutorial, we&#39;ll see how to create:</br> 
+    - Create a symbol to link to a QR code. </br>
+    - Generate a QR code, save it as an image. </br>
+    - Convert it into a footprint for use in PCB design.</br></p>
+<p>1️⃣ <strong>Create a custom symbol</strong></br>
+First, we’ll create a symbol that contains our QR code, so we can place it in the schematic and preserve the link during updates. </br>
+🔧 <strong>Steps</strong>:</br>
+    - Open <strong>Symbol Editor</strong> (Tools &gt; Symbol Editor).</br></br>
+    <img src="/images/OpenSource_Articles/qrcode_kicad/symbol_editor.PNG" alt="Symbol Editor"> </br>
+        - Create New Library or Add an existing one:</br></br>
+    <img src="/images/OpenSource_Articles/qrcode_kicad/new_library.PNG" alt="New Library"> </br>
+        - Choose Global or Project:</br>
+        - Name the symbol library: e.g. <strong>Graphics</strong>.kicad_sym</br>
+        - Click on <strong>New Symbol</strong></br></br>
+     <img src="/images/OpenSource_Articles/qrcode_kicad/new_symbol.PNG" alt="New symbol"> </br>
+        - Name it, for example <strong>QR-Code</strong></br>
+        - Give a reference designator, for example <strong>txt</strong></br>
+        - On the Menubar, click <strong>Symbol properties</strong>:</br></br>
+    <img src="/images/OpenSource_Articles/qrcode_kicad/library_symbol_properties.PNG" alt="Symbol properties"> </br>
+        - Set the properties the value is not important at this stage.</br>
+        - Exclude from simulation (optional)</br>
+        - Exclude from Bill of materials (better to not have a dummy component in the list)</br>
+        - Save the symbol (keep the Symbol Editor opened)</br>
+        - Draw a QR-Code symbol </br></br>
+    <img src="/images/OpenSource_Articles/qrcode_kicad/qrcode_symbol.PNG" alt="QR-Code Symbol"> </br>
+📌 This symbol acts purely as a label and won’t affect electrical functionality.</br></br>
+2️⃣ <strong>Generate a QR Code</strong></br>
+There are many websites that can make a QR code for free. However, if you are willing, you can easily make it with python with the library <strong>qrcode</strong>. </br>
+    - install <strong>qrcode</strong> module with <em>pip install qrcode</em></br>
+    - <em><strong>import qrcode</strong></em> in your script </br>
+    - Create the qrcode object and the grid--&gt; <em>qr = qrcode.QRCode(version = 1, box_size = 10, border = 5)</em></br>
+    - Adding data to the instance &#39;qr&#39; --&gt; <em>qr.add_data(<strong>&quot;YOUR INFORMATION&quot;</strong>)</em></br>
+    - Fit the QR code to the grid --&gt; <em>qr.make(fit = True)</em> </br>
+    - Create QR code image --&gt; <em>img = qr.make_image(fill_color = &#39;black&#39;,back_color = &#39;white&#39;)</em></br>
+    - Save the <strong>PNG</strong> image --&gt; <em>img.save(<strong>YOUR FILE PATH/FILENAME.PNG</strong>)</em></br>
+You can even download our GUI at the link <a href="https://github.com/dd-solve/Kicad_pyscript/tree/main/QR_Code">QRCode GUI</a> </br></br>
+<img src="/images/OpenSource_Articles/qrcode_kicad/qrcode_gui.PNG" alt="QR-Code GUI"> </br>
+3️⃣ <strong>Create a Footprint from the QR code image</strong></br></br>
+    - Open the <strong>Image converter</strong> on the project menu of KiCad</br></br>
+<img src="/images/OpenSource_Articles/qrcode_kicad/Image_Converter_1.PNG" alt="Image Converter Kicad"> </br>
+    - 1. Load the png you have just created </br>
+    - 2. Make sure you are in the <strong>Black &amp; White Picture</strong> tab </br>
+    - 3. Set your <strong>Output Size</strong></br>
+    - 4. Choose the footprint <strong>Layer</strong> (e.g. F.Silkscreen)</br>
+    - 5. <strong>Export to File...</strong></br></br>
+<img src="/images/OpenSource_Articles/qrcode_kicad/Image_Converter_2.PNG" alt="Image Converter Kicad"> </br>
+    - Open the footprint </br>
+    - Select the autogenerated text <strong>G</strong>** and set the layer to something different than F.Silkscreen, e.g. F.Fab. </br></br>
+<img src="/images/OpenSource_Articles/qrcode_kicad/qrcode_footprint.PNG" alt="QR Code Footprint"> </br>
+🔄 <strong>Link Symbol to Footprint</strong> </br></br>
+    Go back to the Symbol Editor and assign the new footprint to the Text_Label symbol.</br>
+    - Open the dialog box <strong>Symbol Properties</strong></br></br>
+    <img src="/images/OpenSource_Articles/qrcode_kicad/symbol_properties.PNG" alt="Footprint Assignment"> </br>
+    - Set the footprint as the one created <strong>qrcode:qrcode_footprint</strong></br>
+    - Save all changes and return to the schematic.</br>
+    - Place the symbol <strong>Graphics</strong> where needed.</br>
+    - Run &quot;Update PCB from Schematic&quot; to sync the board.</br></p>
+<p>🎉 Now your board will automatically display the QR code in the silkscreen</br>
+⬇️ <a href="https://github.com/dd-solve/KiCad_Libraries/tree/main/qrcode_kicad">QR Code Download example</a></p>
+</div> </div> </div> <!-- ✅ This is where page content will go --> </main> <!-- Footer Section --> <footer class="text-white p-6 mt-10" style="background-color: var(--band-color);"> <div class="max-w-7xl mx-auto flex justify-center gap-10 items-center"> <a href="//www.x.com" target="_blank" rel="noopener"> <img src="/images/icons/x.svg" alt="Twitter" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://linkedin.com" target="_blank" rel="noopener"> <img src="/images/icons/linkedin.svg" alt="LinkedIn" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://instagram.com" target="_blank" rel="noopener"> <img src="/images/icons/instagram.svg" alt="Instagram" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://github.com/" target="_blank" rel="noopener"> <img src="/images/icons/github.svg" alt="Github" class="w-8 h-8 hover:opacity-80"> </a> </div> </footer> </body></html>

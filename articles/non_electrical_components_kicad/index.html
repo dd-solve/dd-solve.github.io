@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"><link rel="icon" href="/favicon.svg" type="image/x-icon"><title> | Solve Labs</title><link rel="stylesheet" href="/dd-solve.github.io/_astro/Contact_Social.CBM0VnSF.css"></head> <body class="bg-gray-100 flex flex-col min-h-screen"> <!-- Header Section --> <header class="bg-blue-600 text-white p-6 shadow-lg fixed top-0 left-0 w-full z-50"> <div class="max-w-7xl mx-auto flex justify-between items-center"> <!-- Logo --> <a href="" class="flex items-center gap-2"> <img src="/DD_Logo.svg" alt="Logo" class="w-10 h-10 md:w-12 md:h-12"> <h5 class="text-1xl font-bold leading-[1.1] mt-2 md:mt-0 md:leading-tight ">Solve Labs</h5> </a> <!-- Navigation --> <nav data-astro-cid-dmqpwcec> <ul class="nav-list" data-astro-cid-dmqpwcec> <li data-astro-cid-dmqpwcec> <a href="/" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/home_aboutus.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/Solutions_Services" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/solutions_services.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/OpenSource_Articles" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/opensource_articles.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li><li data-astro-cid-dmqpwcec> <a href="/Contact_Social" class="nav-link " data-astro-cid-dmqpwcec> <img src="/images/icons/contacts_social.svg" alt class="nav-icon" data-astro-cid-dmqpwcec> <span data-astro-cid-dmqpwcec></span> </a> </li> </ul> </nav>  <!-- ✅ Include the Nav component here --> </div> </header> <!-- Main Content --> <main class="flex-grow pt-20 px-10 sm:pt-32">  <div class="row"> <div class="rounded-box service-box" style="max-width: 1000px; margin: auto;align-items: center; text-align: center;"> <h1>Non-Electrical components in KiCad</h1> <img src="/images/OpenSource_Articles/non_electrical_components_kicad/non_electrical_components_ico.PNG" alt="Non Electrical components in KiCad" style="width: 20%; height: auto; align: center; display: block; margin: auto; border-radius: 10px;"> </div> </div> <div class="row"> <div class="rounded-box service-box" style="max-width: 1000px; margin: auto;"> <div class="markdown-content"><p>PCBs are rarely, if ever, standalone elements. They are typically integrated with mechanical constraints and non-electrical components such as screws, chassis, and optical equipment. It&#39;s a good practice to include these components in your design: in the BOM (Bill of Materials), in the schematic for reference, and as footprints in the PCB layout to help prevent collisions with other components or traces. Including them in the 3D preview also gives you a better sense of how the final product will look. In this KiCad tutorial, we’ll learn how to manage these components in an organized and efficient way.</p>
+<p><strong>Solution</strong>
+To properly account for non-electrical components in your PCB design, create dedicated symbols and associate them with custom footprints that include embedded 3D models. These elements should be placed on non-copper layers (e.g., user drawing layers) to ensure they don’t interfere with the electrical design. This approach ensures your mechanical components are considered at every stage—BOM, PCB layout, and 3D visualization.</p>
+<p><strong>What You’ll Learn</strong></p>
+<p>In this tutorial, you’ll learn how to:</br>
+    - Design a non-electrical symbol that represents a mechanical component</br>
+    - Link that symbol to a custom footprint with an associated 3D model</br>
+    - Place the footprint on a non-electrical layer (such as the user drawing layer) for clear separation from copper elements</br></p>
+<p>1️⃣ <strong>Create a Symbol to Hold the Text</strong></p>
+<p>Next, we’ll create a symbol that contains our mechanical object, so we can place it in the schematic and keep it for a complete BOM. For this example we&#39;ll be using the <a href="https://www.thorlabs.com/thorproduct.cfm?partnumber=CP35/M">CP35/M</a> an optical cage plate</br>
+🔧 <strong>Steps</strong>:</br>
+    - Open <strong>Symbol Editor</strong> (Tools &gt; Symbol Editor).</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/symbol_editor.PNG" alt="Open Symbol Editor"> </br>
+        - Create New Library or Add an existing one:</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/new_library.PNG" alt="New Library"> </br>
+        - Choose Global or Project:</br>
+        - Name the symbol library: e.g. <strong>Optical_Components</strong>.kicad_sym</br>
+        - Click on <strong>New Symbol</strong></br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/new_symbol.PNG" alt="New symbol"> </br>
+        - Name it <strong>CP35M</strong></br>
+        - Give a reference designator, for example <strong>mech</strong></br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/symbol_editor_2.PNG" alt="Symbol Editor"> </br>
+        - On the Menubar, click <strong>Symbol properties</strong>:</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/CP35M_symbol_properties_1.PNG" alt="Symbol properties"> </br>
+        - Set the properties the value is not important at this stage.</br>
+        - Exclude from simulation (optional)</br>
+        - If possible place the link for the datasheet</br>
+        - Put a brief description </br>
+        - Create a new field for example named <strong>Link</strong> and paste the web link of the component (this will help the BOM)</br>
+        - Save the symbol (keep the Symbol Editor opened)</p>
+<p>📌 This symbol acts purely as a placeholder and won’t affect electrical functionality.</br></br>
+2️⃣ <strong>Create a Footprint</strong></br>
+🔧 Steps:</br>
+    - Open Footprint Editor.</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/footprint_editor.PNG" alt="Open Footprint Editor"> </br></br>
+    - Create New Library or Add an existing one:</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/new_library_fpeditor.PNG" alt="New library Footprint Editor"> </br>
+    - Choose Global or Project:</br>
+    - Name the footprint library: e.g. <strong>Optiomechanics</strong>.pretty</br>
+    - Click on <strong>New Footprint</strong> (File&gt;New Footprint) </br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/save_footprint_as.PNG" alt="New Footprint"> </br>
+    - Name it, for example <strong>CP35M</strong> in the library just created (<strong>Optomechanics</strong>.pretty)</br>
+    - Go to File&gt;Import&gt;Graphics and choose your DXF file, I chose the <strong>User.Drawings</strong> layer</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/import_DXF.PNG" alt="Import Graphics"> </br>
+    - Here you may want to clean up the DXF and center it</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/imported_DXF.PNG" alt="Imported DXF"> </br>
+    - Go to the menubar and click on <strong>Footprint Properties</strong></br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/footprint_prop_general.PNG" alt="Footprint Properties General"> </br>
+    - You may want to set the link to the datasheet, write down a brief description, place the link to the step file and to the website (all optional) </br>
+    - Component Type <strong>Unspecified</strong></br>
+    - <strong>Exclude from position files</strong> </br>
+    - <strong>Do not populate</strong> </br>
+    - Go to the tab <strong>3D Models</strong></br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/footprint_prop_3D.PNG" alt="Footprint Properties 3D"> </br>
+    - Click on the <strong>&quot;+&quot;</strong> sign to include a new path and search for your .step file</br>
+    - Make sure the option <strong>Show</strong> on the right is <strong>checked</strong></br>
+    - Click <strong>OK</strong></br>
+    - Save the footprint.</br></p>
+<p>🔄 <strong>Link Symbol to Footprint</strong> </br></br>
+    Go back to the Symbol Editor and assign the new footprint to the CP35M symbol.</br>
+    - Open the dialog box <strong>Symbol Properties</strong></br>
+    - Go to the footprint row and search for the created footprint</br></br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/CP35M_symbol_properties_2.PNG" alt="Footprint Assignment"> </br>
+    <img src="/images/OpenSource_Articles/non_electrical_components_kicad/footprint_chooser.PNG" alt="Footprint Assignment"> </br>
+    - Save the symbol and place it into your design</br>
+🎉 - Your BOM will contain the information about the part</br>
+🎉 - The board will display on the <strong>User.Drawings</strong> layer the DXF of your mechanical component</br>
+🎉 - The 3D model will be complete! </br>
+⬇️ <a href="https://github.com/dd-solve/KiCad_Libraries/tree/main/Optical%20Components">Optical Components library download</a></p>
+</div> </div> </div> <!-- ✅ This is where page content will go --> </main> <!-- Footer Section --> <footer class="text-white p-6 mt-10" style="background-color: var(--band-color);"> <div class="max-w-7xl mx-auto flex justify-center gap-10 items-center"> <a href="//www.x.com" target="_blank" rel="noopener"> <img src="/images/icons/x.svg" alt="Twitter" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://linkedin.com" target="_blank" rel="noopener"> <img src="/images/icons/linkedin.svg" alt="LinkedIn" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://instagram.com" target="_blank" rel="noopener"> <img src="/images/icons/instagram.svg" alt="Instagram" class="w-8 h-8 hover:opacity-80"> </a> <a href="https://github.com/" target="_blank" rel="noopener"> <img src="/images/icons/github.svg" alt="Github" class="w-8 h-8 hover:opacity-80"> </a> </div> </footer> </body></html>
