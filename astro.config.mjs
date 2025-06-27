@@ -15,6 +15,6 @@ export default defineConfig({
     
   },
   site: 'https://dd-solve.github.io',
-  base: 'dd-solve.github.io',
+  base: '',
 });
 
