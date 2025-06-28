@@ -8,7 +8,6 @@ const links = [
 
 const currentPage = Astro.url.pathname;
 ---
-
 <nav>
   <ul class="nav-list">
     {links.map(({ href, name, icon }) => {
@@ -51,8 +50,10 @@ const currentPage = Astro.url.pathname;
 
   .nav-link.active {
     color: #e9a506;
-    border-bottom: 2px solid #ff7200;
+    border-bottom: 3px solid #ff7200;
+    
   }
+
 
   .nav-link:hover {
     color: #e9a506;
@@ -62,7 +63,7 @@ const currentPage = Astro.url.pathname;
     width: 90px;
     height: 40px;
     margin-right: 4px;
-    
+
   }
   @media (max-width: 768px) {
  
