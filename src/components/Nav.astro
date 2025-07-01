@@ -11,12 +11,13 @@ const currentPage = Astro.url.pathname;
 <nav>
   <ul class="nav-list">
     {links.map(({ href, name, icon }) => {
-  const normalize = (str) =>
-    str !== "/" ? str.replace(/\/$/, "") : "/";
+  const normalize = (str: string) =>
+    str !== "/" ? str.replace(/\/$/, "").toLowerCase() : "/";
 
   const isActive =
     normalize(currentPage) === normalize(href) ||
     (href !== "/" && normalize(currentPage).startsWith(normalize(href)));
+
 
       return (
         <li>
