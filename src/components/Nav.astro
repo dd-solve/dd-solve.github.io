@@ -11,7 +11,11 @@ const currentPage = Astro.url.pathname;
 <nav>
   <ul class="nav-list">
     {links.map(({ href, name, icon }) => {
-      const isActive = currentPage === href;
+      const isActive =
+  href === "/"
+    ? currentPage === "/"               // Exact match for home
+    : currentPage.startsWith(href);    // Partial match for other links
+
       return (
         <li>
           <a
