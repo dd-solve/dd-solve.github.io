@@ -46,6 +46,9 @@ const me_imagePaths = [
   '/images/Mechanical_Engineering/Mechanics_4.png',
   '/images/Mechanical_Engineering/Mechanics_5.gif'
 ];
+const mp_imagePaths = [
+  '/images/Modules_Packaging/Modules_packaging_1.png',
+];
 const software_imagePaths = [
   '/images/Software_Firmware/Software_1.png',
   '/images/Software_Firmware/Software_2.png'
@@ -56,16 +59,16 @@ const serv_imagePaths = [
 
 ---
 <MainLayout>
-     <!-- First row: Solutions -->
+     <!-- First row: Solutions + Services -->
   <div class="row">
     <div class="rounded-box">
-      <h1>Solutions</h1>
+      <h1>Solutions + Services</h1>
       <div set:html={Sol_html} class="markdown-content"></div>
     </div>
    <Carousel images={serv_imagePaths} id="carousel-solutions"/>
   </div>
 
-  <!-- Second row: Services -->
+  <!-- Second row: Services 
   <div class="row">
     <div class="rounded-box">
       <h1>Services</h1>
@@ -74,7 +77,7 @@ const serv_imagePaths = [
     <Carousel images={serv_imagePaths} id="carousel-serv"/>
   </div>
 </body>
-</div>
+</div> -->
 
 <!-- row: Electronic Engineering -->
   <div class="row">
@@ -102,7 +105,7 @@ const serv_imagePaths = [
       <h1>Modules Packaging</h1>
       <div set:html={Module_html} class="markdown-content"></div>
     </div>
-    <Carousel images={serv_imagePaths} id="carousel-module"/>
+    <Carousel images={mp_imagePaths} id="carousel-module"/>
   </div>
 </body>
 </div>
@@ -116,7 +119,7 @@ const serv_imagePaths = [
   </div>
 </body>
 </div>
-<!-- row: Software & Firmware -->
+<!-- row:General Consulting 
   <div class="row">
     <div class="rounded-box">
       <h1>General Consulting & Technical Support</h1>
@@ -125,7 +128,7 @@ const serv_imagePaths = [
     <Carousel images={serv_imagePaths} id="carousel-general"/>
   </div>
 </body>
-</div>
+</div> -->
 
 </MainLayout>
 <style>
