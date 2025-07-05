@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="130.16299mm"
+   height="38.040001mm"
+   viewBox="0 0 130.16299 38.040001"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="solutions_services.svg"
+   inkscape:export-filename="..\..\public\images\icons\opensource_articles.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4627806"
+     inkscape:cx="235.16856"
+     inkscape:cy="223.20504"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="55"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3"
+       transform="translate(-176.04821,-24.075886)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6944px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#000000;stroke-width:0.799999;paint-order:stroke fill markers"
+         x="175.26688"
+         y="42.446804"
+         id="text1"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6944px;font-family:Satoshi;-inkscape-font-specification:Satoshi;fill:#ffffff;fill-opacity:1;stroke-width:0.8"
+           x="175.26688"
+           y="42.446804"
+           id="tspan2">Solutions</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6944px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#000000;stroke-width:0.799999;paint-order:stroke fill markers"
+         x="199.36823"
+         y="61.576622"
+         id="text1-9"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6944px;font-family:Satoshi;-inkscape-font-specification:Satoshi;fill:#ffffff;fill-opacity:1;stroke-width:0.8"
+           x="199.36823"
+           y="61.576622"
+           id="tspan2-0">Services</tspan></text>
+      <g
+         id="g1"
+         transform="matrix(2.4642246,0,0,2.4648981,-4.0806043,-173.23356)"
+         style="stroke-width:1.0219">
+        <path
+           id="rect11"
+           style="opacity:1;fill:#ff7200;fill-opacity:1;stroke:none;stroke-width:0.0811496;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+           d="m 75.361204,88.560487 v 2.24894 h -2.26364 v 2.42203 h 2.26364 v 2.248939 h 2.437851 v -2.248939 h 2.263643 v -2.42203 h -2.263643 v -2.24894 z" />
+      </g>
+    </g>
+  </g>
+</svg>

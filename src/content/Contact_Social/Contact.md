@@ -1,7 +1,7 @@
 
 # **D+D Solve Labs**
-### Email: **info@dd-solve.com**
-### Phone: **+41 44 123** </br></br>
+### Email: **info@dd-solve.com**</br>
+
 
 #### **Obere Schöntalstrasse 46**
 #### **8406 Winterthur**
