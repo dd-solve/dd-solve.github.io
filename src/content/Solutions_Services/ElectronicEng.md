@@ -1,13 +1,13 @@
-### **Circuit Design & Development**:
+### **Circuit Design & Development**:                                                
 #### - Custom analog, digital, and mixed-signal circuits
 
 #### - Component selection based on performance, cost, and availability
 
 #### - Optimized for reliability, efficiency, and manufacturability
 
-### **Advanced Simulation & Analysis**:
+### **Simulation & Analysis**:/t
 
-#### - Thermal, power, signal integrity, and noise simulations
+#### - Power, signal integrity, and noise simulations
 
 #### - Tolerance and worst-case analysis for robust designs
 
