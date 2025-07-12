@@ -5,7 +5,7 @@
 
 #### - Optimized for reliability, efficiency, and manufacturability
 
-### **Simulation & Analysis**:/t
+### **Simulation & Analysis**:
 
 #### - Power, signal integrity, and noise simulations
 

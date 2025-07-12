@@ -1,1 +1,0 @@
-### Complementing our design and engineering capabilities, we provide technical consulting, end‑to‑end project management (Agile and Waterfall), FMEA (AIAG, VDA) and comprehensive intellectual‑property management—leveraging over a decade of experience with nimble startups, high‑growth scaleups and leading tech corporates. 

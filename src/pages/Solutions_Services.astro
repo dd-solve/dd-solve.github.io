@@ -8,13 +8,9 @@ const html = marked(rawMd);
 
 import MainLayout from "../layouts/Layout.astro";  // Import the layout
 import { getTextContent, getMDContent } from "../utils/loadText.ts";
-const IntroContent = await getTextContent("intro.txt", "Solutions_Services")
 
-const SolutionsContent = await getMDContent("Solutions.md", "Solutions_Services");
+const SolutionsContent = await getMDContent("SolutionsServices.md", "Solutions_Services");
 const Sol_html = marked(SolutionsContent);
-
-const ServicesContent = await getMDContent("Services.md", "Solutions_Services");
-const Ser_html = marked(ServicesContent);
 
 const ElectronicEngineeringContent = await getMDContent("ElectronicEng.md", "Solutions_Services");
 const EE_html = marked(ElectronicEngineeringContent);
@@ -34,6 +30,7 @@ const Consulting_html = marked(ConsultingContent);
 const imagePath = "/images/projects.png"; // Image for this page
 const ee_imagePaths = [
   '/images/Electronic_Engineering/Electronics_1.png',
+  '/images/Electronic_Engineering/Electronics_1.1.png',
   '/images/Electronic_Engineering/Electronics_2.png',
   '/images/Electronic_Engineering/Electronics_3.png',
   '/images/Electronic_Engineering/Electronics_4.png',

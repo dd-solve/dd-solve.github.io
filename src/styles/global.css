@@ -22,6 +22,66 @@ body {
   font-style: normal;
   font-display: swap;
 }
+   .matrix {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 800px;
+      margin: 1rem auto;
+      padding-right: 70rem;
+    }
+
+    .cell {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-family: "Satoshi", sans-serif;
+    }
+
+    button {
+      font-family: "Satoshi", sans-serif;
+      padding: 0.5rem;
+      font-size: 1rem;
+      background: #263043;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      height: 2.5rem;
+    }
+
+    button:hover {
+      background: #ff7200;
+    }
+    .carousel-container button {
+      display: none !important;
+    }
+    
+    #connect {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.5rem 1rem;
+    }
+
+    #output {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      background: #fafafa;
+      height: 200px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-family: "Satoshi", sans-serif;
+    }
 
 html {
   opacity: 1;
@@ -294,6 +354,10 @@ tbody tr:nth-child(even) {
   color: #104e8b; /* Darker blue on hover */
   text-decoration: none;
 }
+
+
+
+
 
 @media (max-width: 768px) {
   .rounded-box {
