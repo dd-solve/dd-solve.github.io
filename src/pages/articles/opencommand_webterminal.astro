@@ -307,6 +307,37 @@ function parseKeyCombo(combo:string): number[] {
       case 'SHIFT': result.push(0x81); break;
       case 'ALT': result.push(0x82); break;
       case 'GUI': result.push(0x83); break;
+      case 'UP': result.push(0xDA); break;
+      case 'DOWN': result.push(0xD9); break;  
+      case 'LEFT': result.push(0xD8); break;
+      case 'RIGHT': result.push(0xD7); break;
+      case 'BACKSPACE': result.push(0xB2); break;
+      case 'TAB': result.push(0xB3); break;
+      case 'RETURN': result.push(0xB0); break;
+      case 'ESC': result.push(0xB1); break;
+      case 'INS': result.push(0xD1); break;
+      case 'DEL': result.push(0xD4); break;
+      case 'PAGE_UP': result.push(0xD3); break;
+      case 'PAGE_DOWN': result.push(0xD6); break;
+      case 'HOME': result.push(0xD2); break;
+      case 'END': result.push(0xD5); break;
+      case 'CAPS': result.push(0xC1); break;
+      case 'F1': result.push(0xC2); break;
+      case 'F2': result.push(0xC3); break;
+      case 'F3': result.push(0xC4); break;
+      case 'F4': result.push(0xC5); break;  
+      case 'F5': result.push(0xC6); break;
+      case 'F6': result.push(0xC7); break;
+      case 'F7': result.push(0xC8); break;
+      case 'F8': result.push(0xC9); break;
+      case 'F9': result.push(0xCA); break;
+      case 'F10': result.push(0xCB); break;
+      case 'F11': result.push(0xCC); break;
+      case 'F12': result.push(0xCD); break;
+      case 'M_RIGHT': result.push(0xCE); break;
+      case 'M_LEFT': result.push(0xCF); break;
+      case 'M_MIDDLE': result.push(0xD0); break;
+      
       default:
         if (t.length === 1) {
           result.push(t.charCodeAt(0));
