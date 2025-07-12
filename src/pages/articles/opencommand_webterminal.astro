@@ -1,10 +1,10 @@
 ---
 import { marked } from 'marked';
 import MainLayout from '../../layouts/Layout.astro';
-import { getTextContent, getMDContent } from '../../utils/loadText.ts';
+import Carousel from '../../components/Carousel.astro';
 
-const content = await getMDContent("", "OpenSource_Articles");
-const content_html = marked(content);
+const keymodifiers_imagePath = "/images/OPC_WebTerminal/keyModifiers.svg"; // Image for this page
+
 ---
 <MainLayout>
 
@@ -29,7 +29,7 @@ const content_html = marked(content);
       <option value="8">8</option>
       <option value="9">9</option>
 
-      <!-- Numbers 1 to 10 -->
+      <!-- Layers 1 to 10 -->
       
     </select>
   </label>
@@ -53,6 +53,7 @@ const content_html = marked(content);
 
 <h3 style="text-align:center;">Serial Monitor</h3>
 <div id="output">(waiting for data...)</div>
+<Carousel images={[keymodifiers_imagePath]} id="carousel-keymodifiers" />
 
 <script>
 // Extend the Navigator type to include 'serial'
