@@ -400,4 +400,28 @@ tbody tr:nth-child(even) {
     font-size: 1px; /* Reduce font size for header text */
     margin-top: 0px;
   }
-}
+
+.matrix {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Small gap between buttons */
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .matrix .cell {
+    width: 48%; /* Slightly less than 50% to account for gap */
+    padding: 0;
+    margin: 0;
+  }
+
+  .matrix button {
+    width: 100%; /* Fill the cell */
+    margin: 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  }
