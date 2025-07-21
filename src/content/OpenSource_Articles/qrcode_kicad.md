@@ -1,5 +1,5 @@
 QR codes offer a simple and compact way to encode information directly onto a printed circuit board (PCB). They can store data such as configuration details, version numbers, or links to specific documentation. </br> 
-As projects grow more complex and documentation becomes harder to manage, embedding a QR code on the board can provide a reliable reference point—ensuring users always have access to accurate and relevant information.</br>
+As projects grow more complex and documentation becomes harder to manage, embedding a QR code on the board can provide a reliable reference point ensuring users always have access to accurate and relevant information.</br>
 
 **Solution**: Use the silkscreen layer with a QRcode. Link it to a non-electrical symbol. This way, your QR code becomes part of the board as component. </br>
 
@@ -22,7 +22,7 @@ First, we’ll create a symbol that contains our QR code, so we can place it in 
         - Click on **New Symbol**</br></br>
      ![New symbol](/images/OpenSource_Articles/qrcode_kicad/new_symbol.PNG) </br>
         - Name it, for example **QR-Code**</br>
-        - Give a reference designator, for example **txt**</br>
+        - Give a reference designator, for example **Graphics**</br>
         - On the Menubar, click **Symbol properties**:</br></br>
     ![Symbol properties](/images/OpenSource_Articles/qrcode_kicad/library_symbol_properties.PNG) </br>
         - Set the properties the value is not important at this stage.</br>

@@ -1,7 +1,7 @@
 PCBs are rarely, if ever, standalone elements. They are typically integrated with mechanical constraints and non-electrical components such as screws, chassis, and optical equipment. It's a good practice to include these components in your design: in the BOM (Bill of Materials), in the schematic for reference, and as footprints in the PCB layout to help prevent collisions with other components or traces. Including them in the 3D preview also gives you a better sense of how the final product will look. In this KiCad tutorial, we’ll learn how to manage these components in an organized and efficient way.
 
 **Solution**
-To properly account for non-electrical components in your PCB design, create dedicated symbols and associate them with custom footprints that include embedded 3D models. These elements should be placed on non-copper layers (e.g., user drawing layers) to ensure they don’t interfere with the electrical design. This approach ensures your mechanical components are considered at every stage—BOM, PCB layout, and 3D visualization.
+To properly account for non-electrical components in your PCB design, create dedicated symbols and associate them with custom footprints that include embedded 3D models. These elements should be placed on non-copper layers (e.g., user drawing layers) to ensure they don’t interfere with the electrical design. This approach ensures your mechanical components are considered at every stage e.g. BOM, PCB layout, and 3D visualization.
 
 **What You’ll Learn**
 
