@@ -1,8 +1,8 @@
 ---
 import { getMDContent } from "../utils/loadText.ts";
 import { marked } from 'marked';
-const PrivacyPopContent = await getMDContent("PrivacyPopup.md", "PrivacyPopup"); // Load text content from PrivacyPopup.md
-const PrivacyPopupContent_html = marked(PrivacyPopContent); // Convert Markdown to HTML
+const PrivacyPopContent = await getMDContent("PrivacyPopup.md", "PrivacyPopup");
+const PrivacyPopupContent_html = marked(PrivacyPopContent);
 const { showPopup = false } = Astro.props;
 ---
 
@@ -26,6 +26,7 @@ const { showPopup = false } = Astro.props;
     border-radius: 8px;
     max-width: 600px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
   }
 
   .popup-overlay.show {
@@ -33,12 +34,14 @@ const { showPopup = false } = Astro.props;
   }
 
   .close-btn {
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     font-weight: bold;
     background: none;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .link-style {
@@ -55,21 +58,40 @@ const { showPopup = false } = Astro.props;
     text-decoration: none;
   }
 </style>
-</style>
 
 <div id="privacyPopup" class="popup-overlay">
   <div class="popup-content">
     <button class="close-btn" onclick="document.getElementById('privacyPopup').classList.remove('show')">×</button>
     <h3>Privacy Policy</h3>
-     <div set:html={PrivacyPopupContent_html} class="markdown-content"></div>
-    <!-- Add more details as needed -->
+    <div set:html={PrivacyPopupContent_html} class="markdown-content"></div>
   </div>
 </div>
-
 <script is:inline>
   function showPrivacyPopup() {
     document.getElementById('privacyPopup').classList.add('show');
   }
+
+  // Close on Esc key
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      const popup = document.getElementById('privacyPopup');
+      popup?.classList.remove('show');
+    }
+  });
+
+  // Close on click outside the popup content
+  document.addEventListener('click', function (event) {
+    const popupOverlay = document.getElementById('privacyPopup');
+    const popupContent = document.querySelector('.popup-content');
+
+    if (
+      popupOverlay?.classList.contains('show') &&
+      popupOverlay.contains(event.target) &&
+      !popupContent.contains(event.target)
+    ) {
+      popupOverlay.classList.remove('show');
+    }
+  });
 </script>
 
 <a href="javascript:void(0)" onclick="showPrivacyPopup()" class="link-style">Privacy Policy</a>
