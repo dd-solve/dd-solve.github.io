@@ -18,7 +18,7 @@ const about_imagePath = ["/images/home_about/about_placeholder.png"]; // Image f
 
 const whyChooseUsContent = await getMDContent("whychooseus.md", "home"); // Load text content
 const whyChooseUs_html = marked(whyChooseUsContent); // Convert Markdown to HTML
-const why_imagePath = ["/images/home_about/about_placeholder.png"]; // Image for this page
+const why_imagePath = ["/images/home_about/why_choose_us.png"]; // Image for this page
 
 
 ---
@@ -46,7 +46,7 @@ const why_imagePath = ["/images/home_about/about_placeholder.png"]; // Image for
                 <h1>Why choose us</h1>
                 <div set:html={whyChooseUs_html} class="markdown-content"></div>
             </div>
-         <Carousel images={[about_imagePath]} id="carousel-home" />
+         <Carousel images={[why_imagePath]} id="carousel-home" />
         </div>
     </body>
 </MainLayout>
