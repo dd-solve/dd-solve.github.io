@@ -299,6 +299,7 @@ tbody tr:nth-child(even) {
   display: flex;
   height: 100%;
   transition: transform 0.5s ease-in-out;
+  animation: slide 12s infinite linear;
 }
 
 .carousel-slide img {
@@ -306,6 +307,10 @@ tbody tr:nth-child(even) {
   height: 100%;
   flex: 0 0 100%;
   object-fit: cover; /* 🔹 Use 'cover' for full-fill or 'contain' for padding */
+}
+/* ✅ Pause the carousel animation when hovering */
+.carousel-container:hover .carousel-slide {
+  animation-play-state: paused !important;
 }
 
 #carousel-keymodifiers {
@@ -318,6 +323,7 @@ tbody tr:nth-child(even) {
   height: auto;
   object-fit: contain; /* Or cover, depending on layout */
 }
+
 .standard-image {
   position: relative;
   width: auto;
@@ -423,5 +429,32 @@ tbody tr:nth-child(even) {
     padding: 0.5rem;
     box-sizing: border-box;
   }
+
+  }
+.service-box {
+  display: flex;
+  flex-direction: column;     /* Stack items vertically */
+  justify-content: space-between; /* Push last element (button) to the bottom */
+  height: 100%;               /* Ensure it uses full box height */
+}
+.mail-button {
+  align-self: flex-start;   /* keeps it left-aligned and original width */
+  /* or align-self: center; to center it horizontally */
+  background-color: #263043;
+  color: #f9f9f9;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 1rem;
+  width: auto;              /* ✅ ensures it stays its natural width */
+}
+
+  .mail-button:hover {
+    background-color: #ff7200;       /* orange blue on hover */
+    color:#f9f9f9;                  /* white text on hover */
 
   }

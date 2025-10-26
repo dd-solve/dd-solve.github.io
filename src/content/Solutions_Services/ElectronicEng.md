@@ -1,13 +1,13 @@
 ### **Circuit Design & Development**:                                                
 #### - Custom analog, digital, and mixed-signal circuits
 
-#### - Component selection based on performance, cost, and availability
+#### - Component selection based on performance, cost and availability
 
-#### - Optimized for reliability, efficiency, and manufacturability
+#### - Optimized for reliability, efficiency and manufacturability
 
 ### **Simulation & Analysis**:
 
-#### - Power, signal integrity, and noise simulations
+#### - Power, signal integrity and noise simulations
 
 #### - Tolerance and worst-case analysis for robust designs
 
@@ -17,7 +17,7 @@
 
 #### - PCB layout with EMI/EMC, thermal, and mechanical considerations
 
-#### - BOM preparation, sourcing, and manufacturing coordination
+#### - BOM preparation, sourcing and manufacturing coordination
 
 #### - DFM and DFT practices integrated into the design process
 

@@ -12,4 +12,4 @@
 #### - Tolerance analysis using WCA, RSS, and Monte Carlo methods to ensure functionality under real-world manufacturing variations.
 
 ### **Rapid Prototyping & Demonstration Models**: 
-#### - Fast fabrication and delivery of functional prototypes serving as Proof-of-Concept for early validation, functional testing, and investor demonstrations.
+#### - Fast fabrication and delivery of functional prototypes serving as Proof-of-Concept for early validation, functional testing and investor demonstrations.

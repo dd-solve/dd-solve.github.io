@@ -31,6 +31,9 @@ const why_imagePath = ["/images/home_about/why_choose_us.png"]; // Image for thi
             <div class="rounded-box service-box">
                 <h1>Engineering innovation from concept to creation</h1> <!-- Displays text from headline.txt -->
                 <div set:html={intro_html} class="markdown-content"></div>
+                <a href="mailto:info@dd-solve.com" class="mail-button">
+                    Contact Us
+                </a>
             </div>
             <Carousel images={[imagePath]} id="carousel-home" />
         </div>
@@ -45,9 +48,14 @@ const why_imagePath = ["/images/home_about/why_choose_us.png"]; // Image for thi
             <div class="rounded-box service-box">
                 <h1>Why choose us</h1>
                 <div set:html={whyChooseUs_html} class="markdown-content"></div>
+                <a href="mailto:info@dd-solve.com" class="mail-button">
+        Contact Us
+        </a>
             </div>
          <Carousel images={[why_imagePath]} id="carousel-home" />
+         
         </div>
+        
     </body>
 </MainLayout>
 

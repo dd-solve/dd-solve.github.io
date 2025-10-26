@@ -1,4 +1,4 @@
-### Founded in Switzerland, [by xxxx and yyy ] our multidisciplinary team merges expertise in electronics, mechanics, optics, and software to deliver cutting-edge, turnkey, end‑to‑end integrated systems solutions worldwide. 
+### Founded in Switzerland in July 2025 our multidisciplinary team merges expertise in electronics, mechanics, optics, and software to deliver cutting-edge, turnkey, end‑to‑end integrated systems solutions worldwide. 
 
 ### Leveraging over a decade of experience, we partner with startups, OEMs, and research institutions to drive innovation across industries. 
 
