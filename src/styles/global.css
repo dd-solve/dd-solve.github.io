@@ -324,6 +324,58 @@ tbody tr:nth-child(even) {
   object-fit: contain; /* Or cover, depending on layout */
 }
 
+.carousel-wrapper {
+  position: relative;
+  max-width: 800px;   /* ← match carousel */
+  width: 100%;
+  margin: auto;
+  border-radius: 12px; /* optional */
+}
+
+/* clickable areas */
+.click-zone {
+  position: absolute;
+  display: block;
+  z-index: 10;
+}
+
+
+
+/* Show tooltip on hover */
+.click-zone:hover::after,
+.click-zone:hover::before {
+  opacity: 1;
+}
+
+.zone1 {
+  top: 0%;
+  left: 0%;
+  width: 50%;
+  height: 50%;
+}
+
+.zone2 {
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+}
+
+.zone3 {
+  top: 50%;
+  left: 0%;
+  width: 50%;
+  height: 50%;
+}
+
+.zone4 {
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+}
+
+
 .standard-image {
   position: relative;
   width: auto;
