@@ -17,23 +17,24 @@ const contact_imagePath = "/images/Contacts/social_icons.png"; // Image for this
          
         <div class="row">
   <div class="rounded-box service-box">
-      <button class="header-button"> Contact us </button>
-      
+      <!-- <button class="header-button"> Contact us </button> -->
+      <div> </br></div>
     <div set:html={Content_html} class="markdown-content"></div>
     <PrivacyPopup />
   </div>
 
   <!-- ✅ wrapper must replace Carousel position in the row -->
+
+
   <div class="carousel-wrapper">
     <Carousel images={[contact_imagePath]} id="carousel-contacts" />
-
     <!-- ✅ Only these click zones apply -->
     <a href="https://www.linkedin.com/company/dd-solve-labs" class="click-zone zone1" title="dd-solve -> LinkedIn"></a>
     <a href="https://www.instagram.com/dd_solve/" class="click-zone zone2" title="dd-solve -> Instagram"></a>
     <a href="https://x.com/dd_solve_labs" class="click-zone zone3" title="dd-solve -> X"></a>
     <a href="https://github.com/dd-solve" class="click-zone zone4" title="dd-solve -> Github"></a>
-   
   </div>
+
 </div>
 
     </body>
