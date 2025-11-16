@@ -1,1 +1,1 @@
-### Python scripting for automation, modeling, simulation, device interfacing, data processing, and developing simple GUI applications or command-line tools. 
+### Python scripting for automation, modeling, simulation, device interfacing, data processing, and developing simple GUI applications or command-line tools.</br> We can also create firmware-like test utilities, though not production-grade embedded firmware.
