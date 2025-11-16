@@ -136,7 +136,7 @@ main {
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -396,7 +396,7 @@ tbody tr:nth-child(even) {
   /* Optional: target specific elements inside markdown */
   .markdown-content h1 {
     font-size: 1.8rem;
-    
+
   }
   .markdown-content h3 {
     font-size: 1rem;
@@ -489,6 +489,33 @@ tbody tr:nth-child(even) {
   justify-content: space-between; /* Push last element (button) to the bottom */
   height: 100%;               /* Ensure it uses full box height */
 }
+.header-button {
+  align-self: center;
+  background-color: #263043;
+  color: #f9f9f9;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 0.9; 
+  text-decoration: none;
+  transition: none !important; /* disable transitions */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: auto;
+  display: inline-block;
+  cursor: default; /* prevents pointer cursor */
+}
+
+/* 🚫 Prevent hover effects */
+.header-button:hover,
+.header-button:active,
+.header-button:focus {
+  transform: none !important;
+  background-color: #263043 !important;
+  color: #f9f9f9 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
 .mail-button {
   align-self: flex-start;   /* keeps it left-aligned and original width */
   /* or align-self: center; to center it horizontally */

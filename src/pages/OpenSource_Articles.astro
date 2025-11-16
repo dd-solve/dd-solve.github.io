@@ -28,14 +28,14 @@ const articlesPath = [
         <!-- First row: Solutions -->
   <div class="row">
     <div class="rounded-box service-box">
-      <h1>Open Source</h1>
+      <button class="header-button"> Open Source </button>
      <div set:html={OpenSource_html} class="markdown-content"></div>
     </div>
     <Carousel images={opensourcePath} id="carousel-OpenSource" />
   </div>
  <div class="row">
     <div class="rounded-box service-box">
-        <h1>Articles</h1>
+        <button class="header-button"> Articles </button>
            <div set:html={Articles_html} class="markdown-content"></div>
     </div>
     <Carousel images={[articlesPath]} id="carousel-Articles" />

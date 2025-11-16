@@ -57,28 +57,18 @@ const serv_imagePaths = [
 <MainLayout>
      <!-- First row: Solutions + Services -->
   <div class="row">
-    <div class="rounded-box">
-      <h1>Solutions + Services</h1>
+    <div class="rounded-box service-box">
+      <button class="header-button"> Solutions + Services </button>
       <div set:html={Sol_html} class="markdown-content"></div>
     </div>
    <Carousel images={serv_imagePaths} id="carousel-solutions"/>
   </div>
 
-  <!-- Second row: Services 
-  <div class="row">
-    <div class="rounded-box">
-      <h1>Services</h1>
-      <div set:html={Ser_html} class="markdown-content"></div>
-    </div>
-    <Carousel images={serv_imagePaths} id="carousel-serv"/>
-  </div>
-</body>
-</div> -->
 
 <!-- row: Electronic Engineering -->
   <div class="row">
-    <div class="rounded-box max-w-4xl w-full mx-auto px-4">
-      <h1>Electronic Engineering</h1>
+    <div class="rounded-box service-box">
+      <button class="header-button"> Electronic Engineering </button>
       <div set:html={EE_html} class="markdown-content"></div>
     </div>
     <Carousel images={ee_imagePaths} id="carousel-electronic"/>
@@ -87,8 +77,8 @@ const serv_imagePaths = [
 </div>
 <!-- row: Mechanical Engineering -->
   <div class="row">
-    <div class="rounded-box">
-      <h1>Mechanical Engineering</h1>
+    <div class="rounded-box service-box">
+      <button class="header-button"> Mechanical Engineering </button>
       <div set:html={ME_html} class="markdown-content"></div>
     </div>
     <Carousel images={me_imagePaths} id="carousel-mechanical"/>
@@ -97,8 +87,8 @@ const serv_imagePaths = [
 </div>
 <!-- row: Modules Packaging -->
   <div class="row">
-    <div class="rounded-box">
-      <h1>Modules Packaging</h1>
+    <div class="rounded-box service-box">
+      <button class="header-button"> Modules Packaging </button>
       <div set:html={Module_html} class="markdown-content"></div>
     </div>
     <Carousel images={mp_imagePaths} id="carousel-module"/>
@@ -107,8 +97,8 @@ const serv_imagePaths = [
 </div>
 <!-- row: Software & Firmware -->
   <div class="row">
-    <div class="rounded-box">
-      <h1>Software Firmware</h1>
+    <div class="rounded-box service-box">
+      <button class="header-button"> Software & Firmware</button>
       <div set:html={Soft_html} class="markdown-content"></div>
     </div>
     <Carousel images={software_imagePaths} id="carousel-software"/>
