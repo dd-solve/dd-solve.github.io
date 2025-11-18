@@ -517,8 +517,9 @@ tbody tr:nth-child(even) {
 }
 
 .mail-button {
-  align-self: flex-start;   /* keeps it left-aligned and original width */
+  /*align-self: flex-start; keeps it left-aligned and original width */
   /* or align-self: center; to center it horizontally */
+  align-self: center;
   background-color: #263043;
   color: #f9f9f9;
   padding: 0.75rem 1.5rem;
