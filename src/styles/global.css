@@ -482,6 +482,11 @@ tbody tr:nth-child(even) {
     box-sizing: border-box;
   }
 
+  .button-row {
+    flex-direction: column;
+
+}
+
   }
 .service-box {
   display: flex;
@@ -538,3 +543,34 @@ tbody tr:nth-child(even) {
     color:#f9f9f9;                  /* white text on hover */
 
   }
+
+  
+.download-button {
+  /*align-self: flex-start; keeps it left-aligned and original width */
+  /* or align-self: center; to center it horizontally */
+  align-self: center;
+  background-color: #263043;
+  color: #f9f9f9;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 1rem;
+  width: auto;              /* ✅ ensures it stays its natural width */
+}
+
+  .download-button:hover {
+    background-color: #ff7200;       /* orange blue on hover */
+    color:#f9f9f9;                  /* white text on hover */
+
+  }
+
+  .button-row {
+  display: flex;
+  justify-content: center; /* matches your align-self: center */
+  gap: 1rem;
+  margin-top: 1rem;
+}

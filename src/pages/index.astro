@@ -31,9 +31,15 @@ const why_imagePath = ["/images/home_about/why_choose_us.png"]; // Image for thi
             <div class="rounded-box service-box">
                 <h1>Engineering innovation from concept to creation</h1> <!-- Displays text from headline.txt -->
                 <div set:html={intro_html} class="markdown-content"></div>
-                <a href="mailto:info@dd-solve.com" class="mail-button">
-                    Contact Us
-                </a>
+                <div class="button-row">
+                    <a href="mailto:info@dd-solve.com" class="mail-button">
+                        Contact Us
+                    </a>
+
+                    <a href="/D+D_Solve_Labs_Flyer.pdf" class="download-button" download>
+                        Brochure
+                    </a>
+                    </div>
             </div>
             <Carousel images={[imagePath]} id="carousel-home" />
         </div>
@@ -41,21 +47,33 @@ const why_imagePath = ["/images/home_about/why_choose_us.png"]; // Image for thi
             <div class="rounded-box service-box">
                 <button class="header-button"> About D+D </button>
                 <div set:html={About_html} class="markdown-content"></div>
-            </div>
+
+                
+
+          </div>
+
          <Carousel images={[about_imagePath]} id="carousel-home" />
         </div>
-        <div class="row">
-            <div class="rounded-box service-box">
-                <button class="header-button"> Why choose us </button>
-                <div set:html={whyChooseUs_html} class="markdown-content"></div>
-                <a href="mailto:info@dd-solve.com" class="mail-button">
-        Contact Us
-        </a>
-            </div>
-         <Carousel images={[why_imagePath]} id="carousel-home" />
-         
-        </div>
+       <div class="row">
+  <div class="rounded-box service-box">
+    <button class="header-button">Why choose us</button>
+
+    <div set:html={whyChooseUs_html} class="markdown-content"></div>
+
+    <div class="button-row">
+  <a href="mailto:info@dd-solve.com" class="mail-button">
+    Contact Us
+  </a>
+
+
+</div>
+
+  </div>
+
+  <Carousel images={[why_imagePath]} id="carousel-home" />
+</div>
+
         
-    </body>
+</body>
 </MainLayout>
 

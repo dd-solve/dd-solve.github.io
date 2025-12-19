@@ -1,5 +1,5 @@
 
-### We aim to accelerate our customers' R&D progress by offering turnkey development, manufacturing support, and strategic consulting.  
+### We aim to accelerate our customers R&D progress by offering turnkey development, manufacturing support, and strategic consulting.  
 
 ### We have a vision for our team that we want to share with our customer: 
 
