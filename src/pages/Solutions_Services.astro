@@ -18,6 +18,9 @@ const EE_html = marked(ElectronicEngineeringContent);
 const MechanicalEngineeringContent = await getMDContent("MechanicalEng.md", "Solutions_Services");
 const ME_html = marked(MechanicalEngineeringContent);
 
+const OpticalEngineeringContent = await getMDContent("OpticalEng.md", "Solutions_Services");
+const OE_html = marked(OpticalEngineeringContent);
+
 const ModulesPackagingContent = await getMDContent("ModulesPackaging.md", "Solutions_Services");
 const Module_html = marked(ModulesPackagingContent);
 
@@ -40,6 +43,12 @@ const me_imagePaths = [
   '/images/Mechanical_Engineering/Mechanics_3.png',
   '/images/Mechanical_Engineering/Mechanics_5.gif'
 ];
+
+const oe_imagePaths = [
+  '/images/Optical_Engineering/optics_bk.png',
+
+];
+
 const mp_imagePaths = [
   '/images/Modules_Packaging/Modules_packaging_1.jpeg',
 ];
@@ -84,6 +93,20 @@ const serv_imagePaths = [
   </div>
 </body>
 </div>
+
+<!-- row: Optical Engineering -->
+  <div class="row">
+    <div class="rounded-box service-box">
+      <button class="header-button"> Optical Engineering </button>
+      <div set:html={OE_html} class="markdown-content"></div>
+    </div>
+    <Carousel images={oe_imagePaths} id="carousel-optical"/>
+  </div>
+</body>
+</div>
+
+
+
 <!-- row: Modules Packaging -->
   <div class="row">
     <div class="rounded-box service-box">
