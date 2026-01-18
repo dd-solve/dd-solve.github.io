@@ -4,15 +4,15 @@
 
 ### 🚨 Please be aware that some links may appear broken, as the project has not yet been publicly released.
 
-| Project | Status |
-|----------|----------|
-|[Web Terminal application for the OpencommHand](/articles/opencommand_webterminal) |✅  Ready |
-| [OpenCommHand macropad project](https://github.com/dd-solve/OpenCommHand)   |✅ Prototype Ready ⚠️link available soon   | 
-| [OpenCommHand automatic test setup](https://github.com/dd-solve/OpenCommHand_AutoTest)   | ✅ Prototype Ready ⚠️link available soon   |
-|[Tiny Developments](https://github.com/dd-solve/Tiny_Developments)    |✅ Prototype Ready ⚠️link available soon|
-|[NE555 PWM Driver](https://github.com/dd-solve/NE555_PWM)    |✅ Prototype Ready ⚠️link available soon|
-| [Transmission lines PCB Toolkit](https://github.com/dd-solve/RF-Toolkit)   | 🧪 Testing  ⚠️link available soon  |
-|[Fluxino](https://github.com/dd-solve/Fluxino)    |🧩 Assembling ⚠️link available soon|
+| Project                                                                                  | Status                                     |
+|------------------------------------------------------------------------------------------|--------------------------------------------|
+|[Web Terminal application for the OpencommHand](/articles/opencommand_webterminal)        |✅ Ready                                   |
+|[OpenCommHand macropad project](https://github.com/dd-solve/OpenCommHand)                 |✅ Prototype Ready ⚠️link available soon   | 
+|[OpenCommHand automatic test setup](https://github.com/dd-solve/OpenCommHand_AutoTest)    |✅ Prototype Ready ⚠️link available soon   |
+|[Tiny Developments](https://github.com/dd-solve/Tiny_Developments)                        |✅ Prototype Ready ⚠️link available soon   |
+|[NE555 PWM Driver](https://github.com/dd-solve/NE555_PWM)                                 |✅ Prototype Ready ⚠️link available soon   |
+|[Transmission lines PCB Toolkit](https://github.com/dd-solve/RF-Toolkit)                  |✅ Prototype Ready ⚠️link available soon   |
+|[Fluxino](https://github.com/dd-solve/Fluxino)                                            |🧩 Assembling      ⚠️link available soon   |
 
 
 
