@@ -48,11 +48,12 @@ const keymodifiers_imagePath = "/images/OPC_WebTerminal/keyModifiers.svg"; // Im
       <input type="text" id="hexCode" placeholder="#RRGGBB" style="width: 100%; padding: 0.5rem;" readonly />
   </div>
 </div>
-
+<p style="text-align:center;">Key combo example: "CTRL+C+1", or "CTRL C 1"</p>
 <div class="matrix" id="matrix"></div>
 
 <h3 style="text-align:center;">Serial Monitor</h3>
 <div id="output">(waiting for data...)</div>
+<h3 style="text-align:center;margin-top: 0;"> List of special characters and key modifiers</h3>
 <Carousel images={[keymodifiers_imagePath]} id="carousel-keymodifiers" />
 
 <script>
