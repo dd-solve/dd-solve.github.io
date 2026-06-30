@@ -1,10 +1,8 @@
 ---
 //import Nav from "./components/Nav";
-import Nav from "../components/Nav.astro";
 import Carousel from '../components/Carousel.astro';
 import { marked } from 'marked';
 import MainLayout from "../layouts/Layout.astro";  // Import the layout
-import { getTextContent } from "../utils/loadText.ts";
 import { getMDContent } from "../utils/loadText.ts";
 
 const OpenSourceContent = await getMDContent("OpenSource.md", "OpenSource_Articles");
@@ -21,6 +19,7 @@ const opensourcePath = [
 
 const articlesPath = [
   "/images/OpenSource_Articles/open_sources.png",
+  "/images/OpenSource_Articles/Differential_Pair_Tlines.png"
   ]; // Image for this page
 ---
 <MainLayout>
@@ -38,7 +37,7 @@ const articlesPath = [
         <button class="header-button"> Articles </button>
            <div set:html={Articles_html} class="markdown-content"></div>
     </div>
-    <Carousel images={[articlesPath]} id="carousel-Articles" />
+    <Carousel images={articlesPath} id="carousel-Articles" />
  </div>
         </body>
 </MainLayout>
