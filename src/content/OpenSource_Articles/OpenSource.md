@@ -9,7 +9,7 @@
 |[Tiny Developments](https://github.com/dd-solve/Tiny-Developments)                 |✅ Released - 03.02.2026|
 |[RF-Toolkit](https://github.com/dd-solve/RF-Toolkit)                               |✅ Released - 01.07.2026|
 |The Hot-Wire Strikes Back                                                          |🚧 Prototype Ready  |
-|Splitter-Balun                                                                     |🚧 Prototype Ready  |
+|Balun-Splitter                                                                     |🚧 Prototype Ready  |
 |OpenCommHand macropad project                                                      |🚧 Prototype Ready  |
 |OpenCommHand automatic test setup                                                  |🚧 Prototype Ready  |
 |Fluxino                                                                            |🧩 Assembling       |
