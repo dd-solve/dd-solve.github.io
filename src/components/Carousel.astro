@@ -3,7 +3,6 @@
 const { images = [], id } = Astro.props;
 ---
 
-
 <style>
   .carousel-container {
     position: relative;
@@ -20,11 +19,13 @@ const { images = [], id } = Astro.props;
     height: 100%;
   }
 
-  .carousel-slide img {
+  .carousel-slide img,
+  .carousel-slide video {
     width: 100%;
     height: 100%;
     flex: 0 0 100%;
     object-fit: cover;
+    display: block;
   }
 
   .carousel-buttons {
@@ -35,6 +36,7 @@ const { images = [], id } = Astro.props;
     justify-content: space-between;
     transform: translateY(-50%);
     padding: 0 1rem;
+    box-sizing: border-box;
   }
 
   .carousel-buttons button {
@@ -56,10 +58,27 @@ const { images = [], id } = Astro.props;
 
 <div class="carousel-container" id={id} data-images={JSON.stringify(images)}>
   <div class="carousel-slide">
-    {images.map((img: string, i: number) => (
-      <img src={img} alt={`Slide ${i + 1}`} loading="lazy" />
-    ))}
+    {images.map((img: string, i: number) => {
+      const isVideo = img.toLowerCase().endsWith('.mp4');
+
+      return isVideo ? (
+        <video
+          src={img}
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        />
+      ) : (
+        <img
+          src={img}
+          alt={`Slide ${i + 1}`}
+          loading="lazy"
+        />
+      );
+    })}
   </div>
+
   <div class="carousel-buttons">
     <button class="prev">‹</button>
     <button class="next">›</button>
@@ -71,48 +90,77 @@ const { images = [], id } = Astro.props;
     const carousels = document.querySelectorAll('.carousel-container');
 
     carousels.forEach(container => {
-      const images = JSON.parse(container.getAttribute('data-images') || '[]');
+      const images = JSON.parse(
+        container.getAttribute('data-images') || '[]'
+      );
+
       const slideContainer = container.querySelector('.carousel-slide');
       const prevBtn = container.querySelector('.prev');
       const nextBtn = container.querySelector('.next');
+
+      const slides = container.querySelectorAll(
+        '.carousel-slide img, .carousel-slide video'
+      );
+
       let currentIndex = 0;
       let interval;
 
-      // Function to update slide position
       function updateSlide() {
-        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        slideContainer.style.transform =
+          `translateX(-${currentIndex * 100}%)`;
+
+        // Pause all videos
+        slides.forEach(slide => {
+          if (slide.tagName === 'VIDEO') {
+            slide.pause();
+            slide.currentTime = 0;
+          }
+        });
+
+        // Play current video
+        const currentSlide = slides[currentIndex];
+
+        if (currentSlide?.tagName === 'VIDEO') {
+          currentSlide.play().catch(() => {});
+        }
       }
 
-      // Button controls
       prevBtn?.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        currentIndex =
+          (currentIndex - 1 + images.length) % images.length;
+
         updateSlide();
       });
 
       nextBtn?.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
+        currentIndex =
+          (currentIndex + 1) % images.length;
+
         updateSlide();
       });
 
-      // Function to start autoplay
       function startCarousel() {
+        clearInterval(interval);
+
         interval = setInterval(() => {
-          currentIndex = (currentIndex + 1) % images.length;
+          currentIndex =
+            (currentIndex + 1) % images.length;
+
           updateSlide();
         }, 3000);
       }
 
-      // Function to stop autoplay
       function stopCarousel() {
         clearInterval(interval);
       }
 
-      // Start autoplay initially
       startCarousel();
 
-      // ✅ Pause on hover
       container.addEventListener('mouseenter', stopCarousel);
       container.addEventListener('mouseleave', startCarousel);
+
+      // Initialize
+      updateSlide();
     });
   });
 </script>
