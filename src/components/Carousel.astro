@@ -58,12 +58,13 @@ const { images = [], id } = Astro.props;
 
 <div class="carousel-container" id={id} data-images={JSON.stringify(images)}>
   <div class="carousel-slide">
-    {images.map((img: string, i: number) => {
-      const isVideo = img.toLowerCase().endsWith('.mp4');
+    {images.map((img: string | { src: string; type: string }, i: number) => {
+      const imgSrc = typeof img === 'string' ? img : img.src;
+      const imgType = typeof img === 'string' ? 'image' : img.type;
 
-      return isVideo ? (
+      return imgType === 'video' ? (
         <video
-          src={img}
+          src={imgSrc}
           muted
           loop
           playsinline
@@ -71,7 +72,7 @@ const { images = [], id } = Astro.props;
         />
       ) : (
         <img
-          src={img}
+          src={imgSrc}
           alt={`Slide ${i + 1}`}
           loading="lazy"
         />

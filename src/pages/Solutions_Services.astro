@@ -40,10 +40,22 @@ const ee_imagePaths = [
   
 ];
 const me_imagePaths = [
-  '/images/Mechanical_Engineering/Mechanics_1.png',
-  '/images/Mechanical_Engineering/Mechanics_2.png',
-  '/images/Mechanical_Engineering/Mechanics_5.mp4',
-  '/images/Mechanical_Engineering/Mechanics_3.png'
+  {
+    type: 'image',
+    src: '/images/Mechanical_Engineering/Mechanics_1.png'
+  },
+  {
+    type: 'image',
+    src: '/images/Mechanical_Engineering/Mechanics_2.png'
+  },
+  {
+    type: 'video',
+    src: '/images/Mechanical_Engineering/Mechanics_5.mp4'
+  },
+  {
+    type: 'image',
+    src: '/images/Mechanical_Engineering/Mechanics_3.png'
+  }
 ];
 
 const oe_imagePaths = [
@@ -92,6 +104,9 @@ const serv_imagePaths = [
       <div set:html={ME_html} class="markdown-content"></div>
     </div>
     <Carousel images={me_imagePaths} id="carousel-mechanical"/>
+
+
+
   </div>
 </body>
 </div>
@@ -146,11 +161,3 @@ const serv_imagePaths = [
     width: 700px;
   }
 </style>
-
-<video
-  src="/images/Mechanical_Engineering/Mechanics_5.mp4"
-  controls
-  muted
-  playsinline
-  style="width: 100%; max-width: 600px;"
-></video>
