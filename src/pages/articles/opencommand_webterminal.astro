@@ -48,7 +48,7 @@ const keymodifiers_imagePath = "/images/OPC_WebTerminal/keyModifiers.svg"; // Im
       <input type="text" id="hexCode" placeholder="#RRGGBB" style="width: 100%; padding: 0.5rem;" readonly />
   </div>
 </div>
-<p style="text-align:center;">Key combo example: "CTRL+C+1", or "CTRL C 1"</p>
+<p style="text-align:center;">Key combo example: "CTRL+c", or "LEFT_CTRL c" or "RIGHT_CTRL C"</p>
 <div class="matrix" id="matrix"></div>
 
 <h3 style="text-align:center;">Serial Monitor</h3>
@@ -306,9 +306,17 @@ function parseKeyCombo(combo:string): number[] {
   for (let t of tokens) {
     switch (t) {
       case 'CTRL': result.push(0x80); break;
+      case 'LEFT_CTRL': result.push(0x80); break;
+      case 'RIGHT_CTRL': result.push(0x84); break;
       case 'SHIFT': result.push(0x81); break;
+      case 'LEFT_SHIFT': result.push(0x81); break;
+      case 'RIGHT_SHIFT': result.push(0x85); break;
       case 'ALT': result.push(0x82); break;
+      case 'LEFT_ALT': result.push(0x82); break;
+      case 'RIGHT_ALT': result.push(0x86); break;
       case 'GUI': result.push(0x83); break;
+      case 'LEFT_GUI': result.push(0x83); break;
+      case 'RIGHT_GUI': result.push(0x87); break;
       case 'UP': result.push(0xDA); break;
       case 'DOWN': result.push(0xD9); break;  
       case 'LEFT': result.push(0xD8); break;
